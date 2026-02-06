@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Victorian - Dual-Sided Electric & Steam Fireplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #4a2c1f;
+            --secondary-dark: #5c3a2a;
+            --accent-gold: #d4af37;
+            --accent-copper: #b87333;
+            --electric-blue: #4a9de3;
+            --steam-white: #a8d0e6;
+            --flame-multicolor: linear-gradient(45deg, #ff6b35, #ffa500, #4a9de3, #9d4edd);
+            --light-bg: #fefefe;
+            --card-bg: rgba(255, 255, 255, 0.97);
+            --text-dark: #333;
+            --text-light: #5a4a3a;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(180deg, var(--light-bg), #dbe2e8, #c8d1d8);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?q=80&w=2068&auto=format&fit=crop') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: linear-gradient(rgba(74, 44, 31, 0.95), rgba(92, 58, 42, 0.9));
+            color: white;
+            border-bottom: 5px solid var(--accent-gold);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+        
+        h1 {
+            font-size: 3.2em;
+            color: white;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-subtitle {
+            font-size: 1.4em;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            backdrop-filter: blur(5px);
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+        
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--electric-blue), var(--steam-white));
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-dark);
+            font-family: 'Cinzel', serif;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        h2 i {
+            color: var(--accent-copper);
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            margin: 15px 0;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.6;
+            font-size: 1.05em;
+            color: var(--text-light);
+        }
+        
+        li::before {
+            content: '🔥';
+            margin-right: 15px;
+            font-size: 1.2em;
+            animation: glow 1.5s infinite alternate;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .dual-fireplace-display {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(rgba(30, 30, 40, 0.95), rgba(20, 20, 30, 0.95));
+            border: 4px solid var(--accent-gold);
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            grid-column: 1 / -1;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dual-view {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 40px;
+        }
+        
+        .fireplace-side {
+            width: 40%;
+            height: 80%;
+            background: linear-gradient(rgba(50, 40, 35, 0.9), rgba(30, 25, 20, 0.9));
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+        
+        .fireplace-mantel {
+            width: 100%;
+            height: 15%;
+            background: linear-gradient(to bottom, #8b7355, #5d432c);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .fireplace-opening {
+            width: 80%;
+            height: 70%;
+            background: #0a0806;
+            position: relative;
+            z-index: 1;
+            border-radius: 0 0 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        
+        .flame-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .electric-flame {
+            width: 80px;
+            height: 150px;
+            background: linear-gradient(to top, transparent 10%, var(--electric-blue) 40%, #8bc7ff 80%, white);
+            border-radius: 50% 50% 20% 20%;
+            filter: blur(6px);
+            position: relative;
+            animation: electricFlame 2.5s infinite alternate;
+            box-shadow: 0 0 30px var(--electric-blue);
+        }
+        
+        .steam-flame {
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(to top, transparent 20%, var(--steam-white) 60%, white);
+            border-radius: 50% 50% 20% 20%;
+            filter: blur(10px);
+            position: relative;
+            animation: steamFlame 3s infinite alternate;
+            box-shadow: 0 0 25px var(--steam-white);
+        }
+        
+        .color-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            gap: 15px;
+            border: 2px solid var(--accent-gold);
+            z-index: 3;
+            backdrop-filter: blur(10px);
+        }
+        
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .color-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px white;
+        }
+        
+        .color-btn.active {
+            transform: scale(1.3);
+            box-shadow: 0 0 20px currentColor;
+        }
+        
+        .tech-drawing-container {
+            width: 100%;
+            height: 300px;
+            background: white;
+            border: 3px solid var(--accent-gold);
+            border-radius: 10px;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            grid-column: 1 / -1;
+        }
+        
+        .tech-drawing-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 94%, rgba(212, 175, 55, 0.05) 94%),
+                        linear-gradient(-45deg, transparent 94%, rgba(212, 175, 55, 0.05) 94%);
+            background-size: 40px 40px;
+        }
+        
+        .dimensions {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .dimension {
+            text-align: center;
+        }
+        
+        .dimension-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .dimension-label {
+            font-size: 1.1em;
+            color: var(--text-light);
+        }
+        
+        .design-category {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-copper);
+            transition: transform 0.3s ease;
+        }
+        
+        .design-category:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .design-icon {
+            font-size: 2em;
+            margin-right: 15px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .design-info h3 {
+            margin: 0 0 5px;
+            color: var(--primary-dark);
+            font-family: 'Cinzel', serif;
+        }
+        
+        .design-info p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+        
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .safety-item {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .safety-item:hover {
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.15);
+        }
+        
+        .safety-icon {
+            font-size: 2.5em;
+            color: var(--accent-copper);
+            margin-bottom: 15px;
+        }
+        
+        .safety-item h4 {
+            margin: 0 0 10px;
+            color: var(--primary-dark);
+            font-family: 'Cinzel', serif;
+        }
+        
+        .safety-item p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        
+        .comparison-highlight {
+            background: linear-gradient(135deg, rgba(74, 157, 227, 0.1), rgba(168, 208, 230, 0.1));
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            grid-column: 1 / -1;
+            border: 2px solid rgba(74, 157, 227, 0.3);
+        }
+        
+        .comparison-highlight h2 {
+            color: var(--electric-blue);
+            border-bottom-color: rgba(74, 157, 227, 0.3);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .feature-item i {
+            font-size: 2.5em;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h3 {
+            margin: 0 0 10px;
+            color: var(--primary-dark);
+            font-family: 'Cinzel', serif;
+        }
+        
+        .feature-item p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+        
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 5px solid var(--accent-gold);
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-item i {
+            color: var(--accent-gold);
+            font-size: 1.3em;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+        }
+        
+        @keyframes glow {
+            0% { 
+                text-shadow: 0 0 5px var(--electric-blue); 
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 0 20px var(--electric-blue), 0 0 30px var(--steam-white);
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes electricFlame {
+            0%, 100% { 
+                height: 150px;
+                width: 80px;
+                opacity: 0.9;
+            }
+            50% { 
+                height: 180px;
+                width: 90px;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes steamFlame {
+            0%, 100% { 
+                height: 120px;
+                width: 80px;
+                opacity: 0.8;
+                filter: blur(10px);
+            }
+            50% { 
+                height: 140px;
+                width: 85px;
+                opacity: 0.9;
+                filter: blur(12px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .dual-fireplace-display {
+                height: 350px;
+            }
+            
+            .dual-view {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .fireplace-side {
+                width: 80%;
+                height: 45%;
+            }
+            
+            .color-controls {
+                flex-wrap: wrap;
+                width: 90%;
+                justify-content: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-fire-alt"></i> The Victorian</h1>
+    <div class="header-subtitle">Dual-Sided Electric & Steam Fireplace</div>
+    
+    <div class="tech-badges">
+        <div class="tech-badge">
+            <i class="fas fa-bolt" style="color: var(--electric-blue);"></i>
+            Electric Flame Technology
+        </div>
+        <div class="tech-badge">
+            <i class="fas fa-water" style="color: var(--steam-white);"></i>
+            Steam Flame Technology
+        </div>
+        <div class="tech-badge">
+            <i class="fas fa-palette" style="color: #ff6b35;"></i>
+            Multi-Color Customization
+        </div>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="dual-fireplace-display">
+        <div class="dual-view">
+            <div class="fireplace-side">
+                <div class="fireplace-mantel"></div>
+                <div class="fireplace-opening">
+                    <div class="flame-container">
+                        <div class="electric-flame" id="electricFlame"></div>
+                    </div>
+                </div>
+                <div style="position: absolute; top: 10px; color: var(--electric-blue); font-weight: bold; font-size: 1.1em;">
+                    Electric Side
+                </div>
+            </div>
+            
+            <div class="fireplace-side">
+                <div class="fireplace-mantel"></div>
+                <div class="fireplace-opening">
+                    <div class="flame-container">
+                        <div class="steam-flame" id="steamFlame"></div>
+                    </div>
+                </div>
+                <div style="position: absolute; top: 10px; color: var(--steam-white); font-weight: bold; font-size: 1.1em;">
+                    Steam Side
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-controls">
+            <div class="color-btn active" style="background: var(--electric-blue);" onclick="changeFlameColor('blue')" title="Electric Blue"></div>
+            <div class="color-btn" style="background: #ff6b35;" onclick="changeFlameColor('orange')" title="Flame Orange"></div>
+            <div class="color-btn" style="background: #9d4edd;" onclick="changeFlameColor('purple')" title="Royal Purple"></div>
+            <div class="color-btn" style="background: #4caf50;" onclick="changeFlameColor('green')" title="Emerald Green"></div>
+            <div class="color-btn" style="background: #ffd700;" onclick="changeFlameColor('gold')" title="Golden Glow"></div>
+            <div class="color-btn" style="background: linear-gradient(45deg, #ff6b35, #9d4edd);" onclick="changeFlameColor('rainbow')" title="Rainbow Effect"></div>
+        </div>
+        
+        <div style="position: absolute; top: 30px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 8px; color: white; z-index: 3;">
+            <h3 style="margin: 0; color: var(--accent-gold);">Dual-Sided Electric & Steam Fireplace</h3>
+        </div>
+    </div>
+    
+    <div class="section-grid">
+        <section>
+            <h2><i class="fas fa-star"></i> Premium Features</h2>
+            <ul>
+                <li>Realistic electric and steam flames with adjustable colours</li>
+                <li>Dual technology operation (steam & electric) for versatile use</li>
+                <li>Indoor compatible, elegant luxury design with Victorian aesthetics</li>
+                <li>Customizable animation colours to match client preference</li>
+                <li>Adjustable flame height and intensity controls</li>
+                <li>Remote control operation with scheduling options</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-info-circle"></i> Description</h2>
+            <ul>
+                <li>Enhances Victorian-inspired interiors with authentic elegance</li>
+                <li>Provides vibrant multi-colour flame ambience without real fire hazards</li>
+                <li>Efficient, low-maintenance design with self-cleaning features</li>
+                <li>Luxury aesthetic, premium quality appeal for discerning clients</li>
+                <li>Combines modern technology with classic Victorian craftsmanship</li>
+                <li>Creates a focal point in any room with mesmerizing visual effects</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-palette"></i> Design Categories</h2>
+            
+            <div class="design-category">
+                <div class="design-icon">🤍</div>
+                <div class="design-info">
+                    <h3>Classic Ivory Mantel</h3>
+                    <p>Timeless elegance with intricate Victorian carvings and marble accents</p>
+                </div>
+            </div>
+            
+            <div class="design-category">
+                <div class="design-icon">🖤</div>
+                <div class="design-info">
+                    <h3>Black Frame</h3>
+                    <p>Bold sophistication with modern metallic finish and clean lines</p>
+                </div>
+            </div>
+            
+            <div class="design-category">
+                <div class="design-icon">🟤</div>
+                <div class="design-info">
+                    <h3>Antique Copper Interior</h3>
+                    <p>Heritage warmth with hand-hammered copper details and patina finish</p>
+                </div>
+            </div>
+            
+            <div class="design-category">
+                <div class="design-icon">⚪</div>
+                <div class="design-info">
+                    <h3>Modern Victorian Hybrid</h3>
+                    <p>Sleek contemporary twist on classic Victorian forms</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-map-marker-alt"></i> Installation & Placement</h2>
+            <ul>
+                <li>Living rooms, lounges, and entertainment spaces</li>
+                <li>Covered patios, sunrooms, or indoor lounges</li>
+                <li>Professional installation recommended for optimal performance</li>
+                <li>Mounted on heat-resistant, stable surfaces</li>
+                <li>Bedroom suites and executive office spaces</li>
+                <li>Hotels, resorts, and premium hospitality venues</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-clipboard-list"></i> Technical Requirements</h2>
+            <ul>
+                <li>Certified electric & steam setup by qualified technician</li>
+                <li>Proper ventilation and clearance for steam dissipation</li>
+                <li>Reliable power supply for electric function (standard 110V-240V)</li>
+                <li>Indoor placement only - not suitable for exposed outdoor locations</li>
+                <li>Clean water supply for steam function (distilled recommended)</li>
+                <li>Level, stable surface with proper weight distribution</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-shield-alt"></i> Safety Features</h2>
+            <ul>
+                <li>Protective front guard with cool-touch technology</li>
+                <li>Heat-resistant materials and proper spacing for safe operation</li>
+                <li>Easy maintenance and cleaning access for long-term reliability</li>
+                <li>Flame controlled and safe for pets and children</li>
+                <li>Auto-shutoff when water level is low (steam function)</li>
+                <li>Overheat protection and short-circuit prevention</li>
+            </ul>
+        </section>
+    </div>
+
+    <section class="tech-drawing-container">
+        <h2 style="position: absolute; top: 20px; left: 20px; margin: 0; border: none; color: var(--primary-dark);">
+            <i class="fas fa-ruler-combined"></i> Technical Specifications
+        </h2>
+        <div class="dimensions">
+            <div class="dimension">
+                <div class="dimension-value">36"</div>
+                <div class="dimension-label">Length</div>
+            </div>
+            <div class="dimension">
+                <div class="dimension-value">16"</div>
+                <div class="dimension-label">Height</div>
+            </div>
+            <div class="dimension">
+                <div class="dimension-value">8.5"</div>
+                <div class="dimension-label">Depth</div>
+            </div>
+        </div>
+        <p style="margin-top: 40px; color: var(--text-light); z-index: 1; text-align: center;">
+            Victorian Dual-Sided Model VDS-2023 | Weight: 65 lbs | Power: 110-240V, 50-60Hz
+        </p>
+    </section>
+
+    <div class="section-grid">
+        <section>
+            <h2><i class="fas fa-check-circle"></i> Why It's Superior</h2>
+            <ul>
+                <li>Electric & steam dual operation for maximum versatility</li>
+                <li>Operates independently - choose electric, steam, or both</li>
+                <li>Luxury-looking design at reasonable client price point</li>
+                <li>Suitable for indoor, gas, and outdoor single setups</li>
+                <li>Lower operating costs compared to traditional fireplaces</li>
+                <li>No chimney or ventilation required for installation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-child"></i> Kids & Pets Safety</h2>
+            <ul>
+                <li>Child-safe flame guard with secure fastening</li>
+                <li>Insulated surfaces remain cool to touch during operation</li>
+                <li>Controlled steam release with automatic safety shutoff</li>
+                <li>Durable and safe construction with rounded edges</li>
+                <li>No toxic emissions or harmful byproducts</li>
+                <li>Parental control lock for operation settings</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-tools"></i> Maintenance & Care</h2>
+            <ul>
+                <li>Simple water refilling for steam function (every 10-12 hours)</li>
+                <li>Easy-access cleaning ports for dust and debris removal</li>
+                <li>LED lights with 50,000-hour lifespan (replaceable)</li>
+                <li>Self-diagnostic system for troubleshooting</li>
+                <li>Annual professional inspection recommended</li>
+                <li>5-year warranty on all electronic components</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-fire-extinguisher"></i> Advanced Safety Systems</h2>
+            <div class="safety-grid">
+                <div class="safety-item">
+                    <div class="safety-icon"><i class="fas fa-temperature-low"></i></div>
+                    <h4>Cool-Touch Exterior</h4>
+                    <p>All external surfaces remain safe to touch even during extended operation</p>
+                </div>
+                
+                <div class="safety-item">
+                    <div class="safety-icon"><i class="fas fa-tint"></i></div>
+                    <h4>Water Level Sensor</h4>
+                    <p>Automatic shutoff when water level is too low for steam generation</p>
+                </div>
+                
+                <div class="safety-item">
+                    <div class="safety-icon"><i class="fas fa-plug"></i></div>
+                    <h4>Surge Protection</h4>
+                    <p>Built-in surge protector guards against electrical fluctuations</p>
+                </div>
+                
+                <div class="safety-item">
+                    <div class="safety-icon"><i class="fas fa-user-lock"></i></div>
+                    <h4>Child Lock</h4>
+                    <p>Secure control lock to prevent unauthorized use by children</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="comparison-highlight">
+        <h2><i class="fas fa-medal"></i> Dual Technology Advantage</h2>
+        <p style="font-size: 1.2em; margin-bottom: 30px; color: var(--text-light); text-align: center;">
+            The Victorian Dual-Sided Fireplace combines the best of both worlds: electric efficiency with steam realism. 
+            Enjoy the visual appeal of a real flame without the hazards, maintenance, or installation complexity of traditional fireplaces.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Electric Efficiency</h3>
+                <p>Low energy consumption with adjustable brightness and color options</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-water"></i>
+                <h3>Steam Realism</h3>
+                <p>Authentic flame appearance with safe water vapor technology</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-palette"></i>
+                <h3>Color Customization</h3>
+                <p>Choose from multiple color themes or create your own custom palette</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-home"></i>
+                <h3>Easy Installation</h3>
+                <p>No chimney, venting, or gas lines required - plug and play operation</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3 style="font-family: 'Cinzel', serif; color: var(--accent-gold); margin-bottom: 20px;">Contact The Victorian</h3>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:thevictorianltd@">thevictorianltd@</a>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>(+92) 334-207-3755</span>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Victorian Fireplaces Ltd. | Heritage Design District</span>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 The Victorian Dual-Sided Fireplaces. All rights reserved.</p>
+            <p>Combining Victorian elegance with modern electric and steam technology.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Flame color change functionality
+    function changeFlameColor(color) {
+        const electricFlame = document.getElementById('electricFlame');
+        const steamFlame = document.getElementById('steamFlame');
+        const buttons = document.querySelectorAll('.color-btn');
+        
+        // Update active button
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        // Define color gradients for different selections
+        const colorSchemes = {
+            blue: {
+                electric: 'linear-gradient(to top, transparent 10%, var(--electric-blue) 40%, #8bc7ff 80%, white)',
+                steam: 'linear-gradient(to top, transparent 20%, var(--steam-white) 60%, white)',
+                shadow: '0 0 30px var(--electric-blue)'
+            },
+            orange: {
+                electric: 'linear-gradient(to top, transparent 10%, #ff6b35 40%, #ffa500 80%, #ffd700)',
+                steam: 'linear-gradient(to top, transparent 20%, #ffa500 60%, #ffd700)',
+                shadow: '0 0 30px #ff6b35'
+            },
+            purple: {
+                electric: 'linear-gradient(to top, transparent 10%, #9d4edd 40%, #c77dff 80%, #e0aaff)',
+                steam: 'linear-gradient(to top, transparent 20%, #c77dff 60%, #e0aaff)',
+                shadow: '0 0 30px #9d4edd'
+            },
+            green: {
+                electric: 'linear-gradient(to top, transparent 10%, #4caf50 40%, #80e27e 80%, #b9f6ca)',
+                steam: 'linear-gradient(to top, transparent 20%, #80e27e 60%, #b9f6ca)',
+                shadow: '0 0 30px #4caf50'
+            },
+            gold: {
+                electric: 'linear-gradient(to top, transparent 10%, #ffd700 40%, #ffeb3b 80%, #fff9c4)',
+                steam: 'linear-gradient(to top, transparent 20%, #ffeb3b 60%, #fff9c4)',
+                shadow: '0 0 30px #ffd700'
+            },
+            rainbow: {
+                electric: 'linear-gradient(to top, transparent 10%, #ff6b35 20%, #ffa500 40%, #ffd700 60%, #4caf50 80%, #9d4edd)',
+                steam: 'linear-gradient(to top, transparent 20%, #ffa500 40%, #4caf50 60%, #9d4edd 80%, var(--electric-blue))',
+                shadow: '0 0 30px rgba(255, 107, 53, 0.7)'
+            }
+        };
+        
+        // Apply selected color scheme
+        if (colorSchemes[color]) {
+            electricFlame.style.background = colorSchemes[color].electric;
+            steamFlame.style.background = colorSchemes[color].steam;
+            electricFlame.style.boxShadow = colorSchemes[color].shadow;
+            steamFlame.style.boxShadow = colorSchemes[color].shadow;
+        }
+        
+        console.log(`Flame color changed to: ${color}`);
+    }
+    
+    // Animate flames independently
+    setInterval(() => {
+        const electricFlame = document.getElementById('electricFlame');
+        const steamFlame = document.getElementById('steamFlame');
+        
+        // Random flame flickering for electric side
+        let electricHeight = 150 + Math.random() * 40;
+        let electricWidth = 75 + Math.random() * 20;
+        electricFlame.style.height = `${electricHeight}px`;
+        electricFlame.style.width = `${electricWidth}px`;
+        
+        // Random flame flickering for steam side
+        let steamHeight = 120 + Math.random() * 30;
+        let steamWidth = 75 + Math.random() * 15;
+        steamFlame.style.height = `${steamHeight}px`;
+        steamFlame.style.width = `${steamWidth}px`;
+        
+        // Random opacity variations
+        electricFlame.style.opacity = `${0.8 + Math.random() * 0.2}`;
+        steamFlame.style.opacity = `${0.7 + Math.random() * 0.3}`;
+    }, 500);
+    
+    // Add hover effect to sections
+    document.querySelectorAll('section').forEach(section => {
+        section.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('h2 i');
+            if (icon) {
+                icon.style.transform = 'scale(1.3) rotate(10deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            }
+        });
+        
+        section.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('h2 i');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+    
+    // Add sparkle effect to design categories on hover
+    document.querySelectorAll('.design-category').forEach(category => {
+        category.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.design-icon');
+            if (icon) {
+                icon.style.textShadow = '0 0 15px rgba(212, 175, 55, 0.7)';
+                icon.style.transition = 'text-shadow 0.3s ease';
+            }
+        });
+        
+        category.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.design-icon');
+            if (icon) {
+                icon.style.textShadow = 'none';
+            }
+        });
+    });
+    
+    // Console greeting
+    console.log("🔥 The Victorian Dual-Sided Fireplace - Electric & Steam Technology");
+    console.log("Experience the perfect blend of Victorian elegance and modern innovation");
+    console.log("Dual technology operation for maximum versatility and visual appeal");
+</script>
+
+</body>
+</html>
